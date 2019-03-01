@@ -42,7 +42,7 @@ struct Obj{
     }
 };
 
-#define AAA(OBJ, FUNC, ...) H::Invoke(OBJ, &decltype(OBJ)::FUNC, __VA_ARGS__)
+#define AAA(OBJ, FUNC, ...) H::Invoke(OBJ, &std::remove_reference<decltype(OBJ)>::type::FUNC, __VA_ARGS__)
 
 int main(int argc, char** argv){
 
